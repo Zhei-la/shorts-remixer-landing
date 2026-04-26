@@ -470,11 +470,31 @@
     .value-savings-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 8px !important; }
     .value-savings-grid > div { padding: 12px 6px !important; }
     .value-savings-grid > div > div:last-child { font-size: 11px !important; }
-    .value-breakeven-box { padding: 32px 20px !important; border-radius: 24px !important; margin-bottom: 32px !important; }
+    .value-breakeven-box { padding: 32px 16px !important; border-radius: 24px !important; margin-bottom: 32px !important; }
     .compare-card-list > div { padding: 10px 12px !important; font-size: 13px !important; }
     
     /* 본전 박스 내부 카드 */
     .value-compare-grid > div { padding: 22px 18px !important; }
+    
+    /* 보너스 가치 리스트 - 가로 유지, 컴팩트하게 */
+    .value-bonus-list { padding: 24px 16px !important; }
+    .value-bonus-list .bonus-item { padding: 12px 14px !important; gap: 10px; }
+    .value-bonus-list .bonus-item > div:first-child { flex: 1; min-width: 0; }
+    .value-bonus-list .bonus-item > div:first-child > div:first-child { font-size: 13px !important; line-height: 1.4 !important; }
+    .value-bonus-list .bonus-item > div:first-child > div:last-child { font-size: 11px !important; }
+    .value-bonus-list .bonus-item > div:last-child { font-size: 14px !important; flex-shrink: 0; white-space: nowrap; }
+    
+    /* 새 본전 비교 (프로 vs 얼리버드) - 모바일에서 가로 유지하되 컴팩트 */
+    .breakeven-compare { gap: 8px !important; }
+    .breakeven-compare > div:nth-child(1),
+    .breakeven-compare > div:nth-child(3) { padding: 14px 10px !important; }
+    .breakeven-compare > div:nth-child(1) > div:nth-child(1),
+    .breakeven-compare > div:nth-child(3) > div:nth-child(1) { font-size: 9px !important; margin-bottom: 6px !important; letter-spacing: 0.05em !important; }
+    .breakeven-compare > div:nth-child(1) > div:nth-child(2),
+    .breakeven-compare > div:nth-child(3) > div:nth-child(2) { font-size: 10px !important; margin-bottom: 4px !important; }
+    .breakeven-compare > div:nth-child(1) > div:nth-child(3),
+    .breakeven-compare > div:nth-child(3) > div:nth-child(3) { font-size: 18px !important; }
+    .breakeven-arrow { font-size: 18px !important; }
     
     /* === 12. EARLYBIRD COMMUNITY: 2열 유지, 컴팩트 === */
     .vip-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; }
@@ -489,8 +509,25 @@
     .auto-process-grid > div > div:nth-child(2) { font-size: 11px !important; }
     .auto-process-grid > div > div:nth-child(3) { font-size: 12px !important; }
     .auto-features-grid { grid-template-columns: 1fr 1fr !important; gap: 8px !important; }
-    .auto-features-grid > div { padding: 10px 12px !important; }
-    .auto-features-grid > div span:last-child { font-size: 12px !important; }
+    .auto-features-grid > div { padding: 10px 12px !important; flex-wrap: nowrap !important; }
+    .auto-features-grid > div span:nth-child(2) { font-size: 12px !important; }
+    /* 단톡방 가이드 항목: 풀폭 + 가로 배지 정렬 */
+    .auto-features-grid > div:last-child { 
+      grid-column: 1 / -1 !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      flex-wrap: nowrap !important;
+    }
+    .auto-features-grid > div:last-child > span:nth-child(2) {
+      flex: 1;
+      min-width: 0;
+    }
+    .auto-features-grid > div:last-child > span:last-child {
+      margin-left: auto !important;
+      flex-shrink: 0;
+      font-size: 9px !important;
+      padding: 3px 7px !important;
+    }
     
     /* === 14. FAQ === */
     .faq-question { padding: 22px 0; font-size: 15px; }
@@ -797,12 +834,10 @@
         <div class="plan-price">무료</div>
         <p class="plan-period">가입 즉시 사용</p>
         <ul class="plan-features">
-          <li>총 5회 영상 생성</li>
+          <li>총 10회 영상 생성</li>
           <li>모든 핵심 기능 사용</li>
-          <li>카테고리 오픈 시 +5회 추가</li>
           <li>언제든 업그레이드 가능</li>
         </ul>
-        <a href="https://open.kakao.com/me/Zheila" target="_blank" class="plan-cta">무료로 시작</a>
       </div>
       
       <div class="plan-card">
@@ -820,7 +855,6 @@
             <span class="locked-badge">🔒 얼리버드 전용</span>
           </li>
         </ul>
-        <a href="https://open.kakao.com/me/Zheila" target="_blank" class="plan-cta">베이직 시작</a>
         
         <!-- 3개월 할인 안내 -->
         <div style="margin-top:20px; padding:16px; background:linear-gradient(135deg, rgba(249,115,22,0.1), rgba(249,115,22,0.05)); border:1px dashed var(--orange); border-radius:16px; text-align:center;">
@@ -848,7 +882,6 @@
             <span class="locked-badge">🔒 얼리버드 전용</span>
           </li>
         </ul>
-        <a href="https://open.kakao.com/me/Zheila" target="_blank" class="plan-cta">프로 시작</a>
         
         <!-- 3개월 할인 안내 -->
         <div style="margin-top:20px; padding:16px; background:linear-gradient(135deg, rgba(249,115,22,0.12), rgba(249,115,22,0.05)); border:1px dashed var(--orange); border-radius:16px;">
@@ -1157,16 +1190,33 @@
       
       <div style="text-align: center; margin-bottom: 48px;">
         <div style="display: inline-block; padding: 8px 20px; background: linear-gradient(135deg, var(--orange), var(--orange-deep)); color: var(--white); border-radius: 100px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; margin-bottom: 20px;">⏱ BREAK-EVEN POINT</div>
-        <h3 style="font-family: var(--font-display); font-size: clamp(28px, 4vw, 42px); font-weight: 600; line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 16px;">
+        <h3 style="font-family: var(--font-display); font-size: clamp(28px, 4vw, 42px); font-weight: 600; line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 24px;">
           프로 플랜 <em style="font-family: var(--font-serif-italic); font-style: italic; color: var(--orange);">1년치보다도 저렴</em>
         </h3>
-        <div style="display: inline-block; padding: 16px 28px; background: var(--cream); border-radius: 16px; font-size: 16px; line-height: 1.7;">
-          <span style="color: var(--grey-700);">월 29,900원 × 12개월 =</span>
-          <strong style="color: var(--black);">358,800원</strong><br>
-          <span style="color: var(--orange); font-weight: 700; font-size: 18px;">↓</span><br>
-          <span style="color: var(--grey-700);">얼리버드 평생 = </span>
-          <strong style="color: var(--orange); font-size: 22px;">350,000원</strong>
-          <span style="display: inline-block; margin-left: 8px; padding: 4px 10px; background: var(--orange); color: var(--white); border-radius: 100px; font-size: 12px; font-weight: 700;">8,800원 ↓</span>
+        
+        <!-- 양쪽 가로 비교 박스 -->
+        <div class="breakeven-compare" style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; max-width: 720px; margin: 0 auto; align-items: center;">
+          <!-- 프로 플랜 1년치 -->
+          <div style="padding: 20px 24px; background: var(--grey-100); border-radius: 16px;">
+            <div style="font-size: 11px; font-weight: 700; color: var(--grey-700); letter-spacing: 0.08em; margin-bottom: 8px;">💎 프로 플랜 1년치</div>
+            <div style="font-size: 13px; color: var(--grey-700); margin-bottom: 6px;">월 29,900원 × 12개월</div>
+            <div style="font-family: var(--font-display); font-size: 26px; font-weight: 600; color: var(--black); letter-spacing: -0.02em;">358,800<span style="font-size: 14px; font-weight: 400;">원</span></div>
+          </div>
+          
+          <!-- 화살표 -->
+          <div class="breakeven-arrow" style="font-size: 28px; color: var(--orange); font-weight: 700;">→</div>
+          
+          <!-- 얼리버드 평생 -->
+          <div style="padding: 20px 24px; background: linear-gradient(135deg, #FFF8F0, #FEF3E7); border: 2px solid var(--orange); border-radius: 16px; position: relative;">
+            <div style="font-size: 11px; font-weight: 700; color: var(--orange); letter-spacing: 0.08em; margin-bottom: 8px;">🔥 얼리버드 평생</div>
+            <div style="font-size: 13px; color: var(--grey-700); margin-bottom: 6px;">한 번만 결제 · 평생</div>
+            <div style="font-family: var(--font-display); font-size: 26px; font-weight: 600; color: var(--orange); letter-spacing: -0.02em;">350,000<span style="font-size: 14px; font-weight: 400;">원</span></div>
+          </div>
+        </div>
+        
+        <!-- 차액 강조 -->
+        <div style="margin-top: 20px;">
+          <span style="display: inline-block; padding: 8px 18px; background: var(--orange); color: var(--white); border-radius: 100px; font-size: 14px; font-weight: 700;">8,800원 더 저렴 + 평생 사용</span>
         </div>
       </div>
       
@@ -1272,11 +1322,11 @@
       </div>
       
       <!-- 가치 리스트 -->
-      <div style="background: var(--white); border-radius: 24px; padding: 40px 32px; border: 1px solid rgba(0,0,0,0.06);">
+      <div class="value-bonus-list" style="background: var(--white); border-radius: 24px; padding: 40px 32px; border: 1px solid rgba(0,0,0,0.06);">
         
         <div style="display: flex; flex-direction: column; gap: 12px;">
           <!-- 메인 -->
-          <div style="display: flex; justify-content: space-between; align-items: center; padding: 18px 24px; background: linear-gradient(135deg, rgba(249,115,22,0.08), rgba(249,115,22,0.03)); border-radius: 14px; border-left: 4px solid var(--orange);">
+          <div class="bonus-item" style="display: flex; justify-content: space-between; align-items: center; padding: 18px 24px; background: linear-gradient(135deg, rgba(249,115,22,0.08), rgba(249,115,22,0.03)); border-radius: 14px; border-left: 4px solid var(--orange);">
             <div>
               <div style="font-weight: 700; font-size: 16px; margin-bottom: 4px;">🎬 쇼츠 리믹서 평생 사용권</div>
               <div style="font-size: 12px; color: var(--grey-500);">제품/인물/썰툰 영상 무제한 제작</div>
@@ -1285,7 +1335,7 @@
           </div>
           
           <!-- 보너스 1 -->
-          <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; background: var(--cream); border-radius: 14px;">
+          <div class="bonus-item" style="display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; background: var(--cream); border-radius: 14px;">
             <div>
               <div style="font-weight: 600; font-size: 15px; margin-bottom: 4px;">🎨 애니메이션 툴</div>
               <div style="font-size: 12px; color: var(--grey-500);">2D 애니메이션 자동 생성</div>
@@ -1294,7 +1344,7 @@
           </div>
           
           <!-- 보너스 2 -->
-          <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; background: var(--cream); border-radius: 14px;">
+          <div class="bonus-item" style="display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; background: var(--cream); border-radius: 14px;">
             <div>
               <div style="font-weight: 600; font-size: 15px; margin-bottom: 4px;">🎭 3D 픽사 영상 툴</div>
               <div style="font-size: 12px; color: var(--grey-500);">픽사 스타일 3D 자동 제작</div>
@@ -1303,7 +1353,7 @@
           </div>
           
           <!-- 보너스 3 -->
-          <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; background: var(--cream); border-radius: 14px;">
+          <div class="bonus-item" style="display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; background: var(--cream); border-radius: 14px;">
             <div>
               <div style="font-weight: 600; font-size: 15px; margin-bottom: 4px;">🎬 AI 영화 제작 툴 <span style="font-size: 11px; padding: 2px 8px; background: var(--orange); color: var(--white); border-radius: 100px; margin-left: 6px; font-weight: 700;">⭐ 인기</span></div>
               <div style="font-size: 12px; color: var(--grey-500);">캐릭터 시트 자동 생성 + 영상화</div>
@@ -1312,7 +1362,7 @@
           </div>
           
           <!-- 보너스 4 - 얼리버드 전용 -->
-          <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; background: var(--cream); border-radius: 14px;">
+          <div class="bonus-item" style="display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; background: var(--cream); border-radius: 14px;">
             <div>
               <div style="font-weight: 600; font-size: 15px; margin-bottom: 4px;">📝 썰 이미지&대본 생성기 <span style="font-size: 11px; padding: 2px 8px; background: var(--black); color: var(--white); border-radius: 100px; margin-left: 6px; font-weight: 700; letter-spacing: 0.05em;">🔥 얼리버드 전용</span></div>
               <div style="font-size: 12px; color: var(--grey-500);">썰툰 콘텐츠 자동 생성</div>
@@ -1321,7 +1371,7 @@
           </div>
           
           <!-- 보너스 5 -->
-          <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; background: var(--cream); border-radius: 14px;">
+          <div class="bonus-item" style="display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; background: var(--cream); border-radius: 14px;">
             <div>
               <div style="font-weight: 600; font-size: 15px; margin-bottom: 4px;">💎 얼리버드 단톡방</div>
               <div style="font-size: 12px; color: var(--grey-500);">사용 팁 · 신기능 · 커뮤니티</div>
@@ -1330,7 +1380,7 @@
           </div>
           
           <!-- 보너스 6 -->
-          <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; background: var(--cream); border-radius: 14px;">
+          <div class="bonus-item" style="display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; background: var(--cream); border-radius: 14px;">
             <div>
               <div style="font-weight: 600; font-size: 15px; margin-bottom: 4px;">🚀 신규 툴 평생 무료 제공</div>
               <div style="font-size: 12px; color: var(--grey-500);">앞으로 출시되는 모든 툴 포함</div>
@@ -1451,6 +1501,41 @@
 </section>
 
 <!-- BUNDLE -->
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="final-cta-content">
+    <h2 class="final-title">지금 시작하면,<br><em>이 모든 것이</em> 포함됩니다.</h2>
+    
+    <div class="final-summary">
+      <div class="final-summary-title">🎁 얼리버드 가입 혜택</div>
+      <ul>
+        <li>쇼츠 리믹서 평생 사용권</li>
+        <li>일일 영상 제작 무제한</li>
+        <li>평생 업데이트 무료</li>
+        <li>인물 영상 기능 (5월 출시)</li>
+        <li>썰툰 기능 (5월 출시)</li>
+        <li>애니메이션 툴 증정</li>
+        <li>AI 영화 제작 툴 증정</li>
+        <li>3D 픽사 영상 툴 증정</li>
+        <li>썰 이미지&대본 생성기 툴 증정</li>
+        <li>얼리버드 단톡방 초대</li>
+        <li>신규 툴 출시 시 무료 제공</li>
+      </ul>
+    </div>
+    
+    <div class="final-price-tag">
+      <span class="final-price-original">500,000원</span>
+      <span class="final-price-current">350,000<span class="won">원</span></span>
+    </div>
+    
+    <div>
+      <a href="https://open.kakao.com/me/Zheila" target="_blank" class="btn-kakao">💬 평생 사용권 구매 문의하기</a>
+    </div>
+    
+    <p style="margin-top: 24px; color: var(--grey-500); font-size: 14px;">카카오톡으로 바로 연결됩니다</p>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="faq" id="faq">
   <div class="faq-container">
@@ -1526,41 +1611,6 @@
         빠르게 응답해드립니다.
       </div></div>
     </div>
-  </div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="final-cta">
-  <div class="final-cta-content">
-    <h2 class="final-title">지금 시작하면,<br><em>이 모든 것이</em> 포함됩니다.</h2>
-    
-    <div class="final-summary">
-      <div class="final-summary-title">🎁 얼리버드 가입 혜택</div>
-      <ul>
-        <li>쇼츠 리믹서 평생 사용권</li>
-        <li>일일 영상 제작 무제한</li>
-        <li>평생 업데이트 무료</li>
-        <li>인물 영상 기능 (5월 출시)</li>
-        <li>썰툰 기능 (5월 출시)</li>
-        <li>애니메이션 툴 증정</li>
-        <li>AI 영화 제작 툴 증정</li>
-        <li>3D 픽사 영상 툴 증정</li>
-        <li>썰 이미지&대본 생성기 툴 증정</li>
-        <li>얼리버드 단톡방 초대</li>
-        <li>신규 툴 출시 시 무료 제공</li>
-      </ul>
-    </div>
-    
-    <div class="final-price-tag">
-      <span class="final-price-original">500,000원</span>
-      <span class="final-price-current">350,000<span class="won">원</span></span>
-    </div>
-    
-    <div>
-      <a href="https://open.kakao.com/me/Zheila" target="_blank" class="btn-kakao">💬 평생 사용권 구매 문의하기</a>
-    </div>
-    
-    <p style="margin-top: 24px; color: var(--grey-500); font-size: 14px;">카카오톡으로 바로 연결됩니다</p>
   </div>
 </section>
 
