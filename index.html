@@ -240,6 +240,35 @@
   .plan-features li { padding: 12px 0; border-bottom: 1px solid rgba(0,0,0,0.06); display: flex; align-items: center; gap: 12px; font-size: 14px; }
   .plan-features li::before { content: '✓'; color: var(--orange); font-weight: 700; font-size: 16px; }
   .plan-features li:last-child { border-bottom: none; }
+  
+  /* 비활성화된 기능 (X 표시) */
+  .plan-features li.feature-disabled {
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+  .plan-features li.feature-disabled::before {
+    content: '✕';
+    color: #DC2626;
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .plan-features li.feature-disabled .x-mark {
+    text-decoration: line-through;
+    color: var(--grey-500);
+    font-size: 13px;
+  }
+  .plan-features li.feature-disabled .locked-badge {
+    margin-left: auto;
+    padding: 3px 9px;
+    background: var(--orange);
+    color: var(--white);
+    border-radius: 100px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+  }
   .plan-cta { width: 100%; padding: 16px 24px; border-radius: 100px; border: 2px solid var(--black); background: transparent; color: var(--black); font-weight: 600; font-size: 15px; cursor: pointer; transition: all 0.3s; font-family: inherit; text-decoration: none; display: inline-block; text-align: center; }
   .plan-cta:hover { background: var(--black); color: var(--white); }
   .plan-card.featured .plan-cta { background: var(--orange); border-color: var(--orange); color: var(--white); }
@@ -354,12 +383,12 @@
   <div class="download-bar-text">
     <span>쇼츠 리믹서 프로그램이 준비되었습니다.</span>
   </div>
-  <a href="https://open.kakao.com/me/Zheila" target="_blank" class="download-bar-btn">
+  <a href="https://github.com/Zhei-la/shorts-remixer-download/releases/tag/v3.0.2" target="_blank" class="download-bar-btn">
     <span>📥</span>
     <span>프로그램 다운로드</span>
   </a>
-  <a href="https://open.kakao.com/me/Zheila" target="_blank" class="download-bar-btn-secondary">
-    <span>💬</span>
+  <a href="install-guide.html" class="download-bar-btn-secondary">
+    <span>📖</span>
     <span>설치 가이드</span>
   </a>
 </div>
@@ -638,8 +667,22 @@
           <li>모든 기능 이용</li>
           <li>기본 기술 지원</li>
           <li>언제든 업그레이드 가능</li>
+          <li class="feature-disabled" style="opacity:0.55;">
+            <span class="x-mark">썰툰 이미지 자동 생성 툴</span>
+            <span class="locked-badge">🔒 얼리버드 전용</span>
+          </li>
         </ul>
         <a href="https://open.kakao.com/me/Zheila" target="_blank" class="plan-cta">베이직 시작</a>
+        
+        <!-- 3개월 할인 안내 -->
+        <div style="margin-top:20px; padding:16px; background:linear-gradient(135deg, rgba(249,115,22,0.1), rgba(249,115,22,0.05)); border:1px dashed var(--orange); border-radius:16px; text-align:center;">
+          <div style="font-size:11px; font-weight:700; color:var(--orange); letter-spacing:0.1em; margin-bottom:6px;">💡 3개월 결제 시</div>
+          <div style="font-size:14px; font-weight:700; color:var(--black); margin-bottom:4px;">15% 할인</div>
+          <div style="font-family: var(--font-display); font-size:24px; font-weight:600; color:var(--orange); letter-spacing:-0.02em;">
+            <span style="text-decoration:line-through; opacity:0.5; font-size:16px; color:var(--grey-500);">44,700원</span>
+            38,000<span style="font-size:13px; font-weight:400;">원</span>
+          </div>
+        </div>
       </div>
       
       <div class="plan-card featured">
@@ -650,20 +693,33 @@
         <ul class="plan-features">
           <li>총 50개 영상 생성 / 월</li>
           <li>모든 기능 이용</li>
-          <li>우선 기술 지원</li>
-          <li>신기능 먼저 체험</li>
+          <li>기본 기술 지원</li>
+          <li>언제든 업그레이드 가능</li>
+          <li class="feature-disabled" style="opacity:0.55;">
+            <span class="x-mark">썰툰 이미지 자동 생성 툴</span>
+            <span class="locked-badge">🔒 얼리버드 전용</span>
+          </li>
         </ul>
         <a href="https://open.kakao.com/me/Zheila" target="_blank" class="plan-cta">프로 시작</a>
         
-        <div style="margin-top:20px; padding:16px; background:linear-gradient(135deg, rgba(249,115,22,0.1), rgba(249,115,22,0.05)); border:1px dashed var(--orange); border-radius:16px; text-align:center;">
-          <div style="font-size:11px; font-weight:700; color:var(--orange); letter-spacing:0.1em; margin-bottom:6px;">🔥 첫 구매 특별 혜택</div>
-          <div style="font-size:14px; font-weight:700; color:var(--black); margin-bottom:4px;">3개월 이용 시 30% 할인</div>
-          <div style="font-family: var(--font-display); font-size:24px; font-weight:600; color:var(--orange); letter-spacing:-0.02em;">
-            <span style="text-decoration:line-through; opacity:0.5; font-size:16px; color:var(--grey-500);">89,700원</span>
-            62,700<span style="font-size:13px; font-weight:400;">원</span>
+        <!-- 3개월 할인 안내 -->
+        <div style="margin-top:20px; padding:16px; background:linear-gradient(135deg, rgba(249,115,22,0.12), rgba(249,115,22,0.05)); border:1px dashed var(--orange); border-radius:16px;">
+          <!-- 첫 구매 -->
+          <div style="text-align:center; padding-bottom:14px; border-bottom:1px dashed rgba(249,115,22,0.3);">
+            <div style="display:inline-block; padding:4px 10px; background:var(--orange); color:var(--white); border-radius:100px; font-size:10px; font-weight:700; letter-spacing:0.08em; margin-bottom:8px;">🔥 첫 구매 한정</div>
+            <div style="font-size:13px; font-weight:700; color:var(--black); margin-bottom:2px;">3개월 결제 시 30% 할인</div>
+            <div style="font-family: var(--font-display); font-size:22px; font-weight:600; color:var(--orange); letter-spacing:-0.02em;">
+              <span style="text-decoration:line-through; opacity:0.5; font-size:14px; color:var(--grey-500);">89,700원</span>
+              62,700<span style="font-size:12px; font-weight:400;">원</span>
+            </div>
           </div>
-          <div style="font-size:11px; color:var(--grey-700); margin-top:6px; line-height:1.5;">
-            이후에도 <strong>30% 할인 유지 가능</strong>
+          <!-- 재구매 -->
+          <div style="text-align:center; padding-top:14px;">
+            <div style="font-size:11px; font-weight:700; color:var(--grey-700); letter-spacing:0.08em; margin-bottom:6px;">💡 이후 재구매 시</div>
+            <div style="font-size:13px; font-weight:600; color:var(--black); margin-bottom:2px;">3개월 결제 15% 할인 유지</div>
+            <div style="font-family: var(--font-display); font-size:18px; font-weight:600; color:var(--grey-700); letter-spacing:-0.02em;">
+              76,200<span style="font-size:11px; font-weight:400;">원</span>
+            </div>
           </div>
         </div>
       </div>
@@ -1158,9 +1214,10 @@
             <span style="color:var(--orange); font-weight:700;">✓</span>
             <span style="font-size:14px; color:var(--grey-300);">프롬프트 템플릿 제공</span>
           </div>
-          <div style="display:flex; align-items:center; gap:10px; padding:12px 16px; background:rgba(255,255,255,0.03); border-radius:12px;">
+          <div style="display:flex; align-items:center; gap:10px; padding:12px 16px; background:rgba(249,115,22,0.08); border:1px solid rgba(249,115,22,0.2); border-radius:12px;">
             <span style="color:var(--orange); font-weight:700;">✓</span>
             <span style="font-size:14px; color:var(--grey-300);">VIP 단톡방에서 가이드 제공</span>
+            <span style="font-size:10px; padding:3px 8px; background:var(--orange); color:var(--white); border-radius:100px; font-weight:700; letter-spacing:0.05em; margin-left:auto;">🔥 평생 이용권 한정</span>
           </div>
         </div>
       </div>
