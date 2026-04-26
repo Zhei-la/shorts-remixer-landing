@@ -373,50 +373,154 @@
 
   /* RESPONSIVE */
   @media (max-width: 768px) {
-    .download-bar { padding: 12px 20px; }
-    .download-bar-text { font-size: 12px; }
-    .download-bar-btn, .download-bar-btn-secondary { padding: 6px 14px; font-size: 12px; }
-    nav { padding: 16px 20px; }
+    /* === 1. 전반적 섹션 패딩 축소 (페이지 길이 단축) === */
+    .download-bar { padding: 10px 16px; gap: 10px; }
+    .download-bar-text { font-size: 11px; }
+    .download-bar-btn, .download-bar-btn-secondary { padding: 6px 12px; font-size: 11px; }
+    nav { padding: 14px 16px; }
     .nav-links { display: none; }
-    .nav-cta { padding: 8px 16px; font-size: 13px; }
-    .hero { padding: 60px 20px; }
-    .pain-points { grid-template-columns: 1fr 1fr; }
-    .hero-ctas { flex-direction: column; align-items: stretch; }
-    .hero-social-proof { flex-direction: column; align-items: flex-start; gap: 12px; }
-    .solution, .features, .cases, .pricing, .bundle, .faq, .final-cta { padding: 80px 20px; }
-    .process, .feature-grid, .cases-grid, .monthly-plans, .bundle-grid { grid-template-columns: 1fr; }
-    .process-arrow { display: none; }
-    .earlybird { margin: 0 20px; padding: 60px 30px; border-radius: 32px; }
-    .eb-features { grid-template-columns: 1fr; }
-    .eb-price-current { font-size: 64px; }
-    .final-summary ul { columns: 1; }
+    .nav-cta { padding: 8px 14px; font-size: 12px; }
     
-    /* VALUE BREAKDOWN 모바일 대응 */
-    .value-compare-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
+    /* === 2. HERO 압축 === */
+    .hero { padding: 40px 20px 56px; min-height: auto; }
+    .hero-badge { margin-bottom: 20px; font-size: 12px; padding: 6px 12px; }
+    .hero-question { font-size: 18px !important; margin-bottom: 24px; }
+    .pain-points { grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 28px; }
+    .pain-item { padding: 14px 14px; }
+    .pain-emoji { font-size: 22px; margin-bottom: 6px; }
+    .pain-text { font-size: 12px; line-height: 1.4; }
+    .hero-title { font-size: 44px !important; margin-bottom: 20px; line-height: 1; }
+    .hero-desc { font-size: 15px !important; margin-bottom: 28px; line-height: 1.55; }
+    .hero-ctas { flex-direction: column; align-items: stretch; gap: 10px; margin-bottom: 24px; }
+    .btn-primary, .btn-secondary { padding: 14px 24px; font-size: 14px; }
+    .hero-social-proof { gap: 8px 14px; flex-wrap: wrap; flex-direction: row; font-size: 12px; }
+    
+    /* === 3. 섹션 패딩 일괄 축소 (80→56) === */
+    .solution, .features, .cases, .pricing, .bundle, .faq, .final-cta { padding: 56px 20px !important; }
+    
+    /* === 4. 섹션 타이틀 / 설명 축소 === */
+    .section-label { margin-bottom: 14px; font-size: 11px; }
+    .solution-title, .features-title, .cases-title, .pricing-title, .bundle-title, .faq-title, .final-title {
+      font-size: 32px !important; margin-bottom: 14px; line-height: 1.1;
+    }
+    .solution-desc, .features-desc, .pricing-subtitle, .bundle-desc, .faq-subtitle {
+      font-size: 14px !important; margin-bottom: 36px !important; line-height: 1.55;
+    }
+    
+    /* === 5. PROCESS 3단계: 2열 + 마지막 1개 풀폭 === */
+    .process { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .process-step { padding: 24px 16px; }
+    .process-step:last-child { grid-column: 1 / -1; }
+    .process-arrow { display: none; }
+    .step-number { font-size: 48px; margin-bottom: 12px; }
+    .step-title { font-size: 17px; margin-bottom: 6px; }
+    .step-desc { font-size: 13px; }
+    
+    /* === 6. FEATURES (제품/인물/썰툰 카드): 1열 + 패딩 축소 === */
+    .feature-grid { grid-template-columns: 1fr; gap: 14px; }
+    .feature-card { padding: 28px 22px; }
+    .feature-icon { font-size: 36px; margin-bottom: 14px; }
+    .feature-name { font-size: 22px; }
+    .feature-tagline { font-size: 14px; margin-bottom: 14px; }
+    .feature-list li { font-size: 13px; padding: 6px 0 6px 22px; }
+    
+    /* === 7. CASES (추천 대상): 2열 + 컴팩트 === */
+    .cases-grid { grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 36px; }
+    .case-card { padding: 22px 16px; }
+    .case-avatar { width: 44px; height: 44px; font-size: 20px; margin-bottom: 12px; }
+    .case-name { font-size: 14px; }
+    .case-role { font-size: 11px; margin-bottom: 14px; }
+    .case-quote { font-size: 12px; padding-left: 12px; margin-bottom: 14px; line-height: 1.5; }
+    .case-result { padding-top: 12px; gap: 6px; }
+    .metric-value { font-size: 18px; }
+    .metric-label { font-size: 10px; }
+    
+    /* === 8. PRICING: 1열, 카드 패딩 축소 === */
+    .monthly-plans { grid-template-columns: 1fr !important; gap: 16px; margin-bottom: 48px; }
+    .plan-card { padding: 32px 22px; border-radius: 24px; }
+    .plan-emoji { font-size: 36px; margin-bottom: 10px; }
+    .plan-name { font-size: 22px; }
+    .plan-price { font-size: 32px; }
+    .plan-period { font-size: 13px; margin-bottom: 20px; }
+    .plan-features li { padding: 9px 0; font-size: 13px; }
+    .plan-cta { padding: 13px 20px; font-size: 14px; }
+    
+    /* === 9. BUNDLE (보너스 영상): 1열 강제, 카드 패딩 축소 === */
+    .bundle-grid { grid-template-columns: 1fr !important; gap: 16px; }
+    .bundle-card { padding: 24px 20px; }
+    .bundle-number { font-size: 44px; margin-bottom: 8px; }
+    .bundle-name { font-size: 22px; margin-bottom: 8px; }
+    .bundle-desc-small { font-size: 13px; margin-bottom: 16px; }
+    
+    /* === 10. EARLYBIRD === */
+    .earlybird { margin: 0 16px; padding: 48px 24px; border-radius: 28px; }
+    .eb-badge { font-size: 11px; padding: 8px 14px; margin-bottom: 20px; }
+    .eb-title { font-size: 32px !important; margin-bottom: 18px; }
+    .eb-price-original { font-size: 22px; }
+    .eb-price-current { font-size: 56px; }
+    .eb-price-current .won { font-size: 32px; }
+    .eb-discount-badge { font-size: 12px; padding: 5px 12px; margin-bottom: 24px; }
+    .eb-features { grid-template-columns: 1fr 1fr !important; gap: 8px !important; margin-bottom: 32px; }
+    .eb-feature { padding: 10px 12px; font-size: 12px; }
+    .eb-cta-btn { padding: 18px 32px; font-size: 15px; }
+    .eb-warning { font-size: 12px; }
+    
+    /* === 11. VALUE BREAKDOWN: 압축 === */
+    .value-compare-grid { grid-template-columns: 1fr !important; gap: 14px !important; }
     .value-savings-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 8px !important; }
     .value-savings-grid > div { padding: 12px 6px !important; }
     .value-savings-grid > div > div:last-child { font-size: 11px !important; }
-    .value-breakeven-box { padding: 32px 20px !important; }
-    .value-bonus-list { padding: 24px 16px !important; }
-    .value-bonus-list .bonus-item { padding: 14px 16px !important; flex-direction: column !important; align-items: flex-start !important; gap: 8px !important; }
-    .value-bonus-list .bonus-item > div:last-child { font-size: 16px !important; align-self: flex-end; }
-    .value-total-box { padding: 20px !important; }
-    .value-total-row { flex-direction: column !important; align-items: flex-start !important; gap: 10px !important; }
-    .value-total-row span:nth-child(2) { font-size: 22px !important; align-self: flex-end !important; }
-    
-    /* EARLYBIRD COMMUNITY 모바일 - 4열을 2열로 */
-    .vip-grid { grid-template-columns: 1fr 1fr !important; gap: 12px !important; }
-    .vip-grid > div { padding: 24px 16px !important; }
-    
-    /* BONUS BUNDLE 자동화 박스 모바일 */
-    .auto-process-grid { grid-template-columns: 1fr !important; gap: 10px !important; }
-    .auto-features-grid { grid-template-columns: 1fr !important; }
-    
-    /* 가격 비교 박스 안 본전/추가 결제 카드 폰트 */
+    .value-breakeven-box { padding: 32px 20px !important; border-radius: 24px !important; margin-bottom: 32px !important; }
     .compare-card-list > div { padding: 10px 12px !important; font-size: 13px !important; }
     
-    /* 본전 박스 안내 inline-block 박스 */
-    .breakeven-summary { padding: 14px 18px !important; font-size: 14px !important; }
+    /* 본전 박스 내부 카드 */
+    .value-compare-grid > div { padding: 22px 18px !important; }
+    
+    /* === 12. EARLYBIRD COMMUNITY: 2열 유지, 컴팩트 === */
+    .vip-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; }
+    .vip-grid > div { padding: 20px 14px !important; }
+    .vip-grid h3 { font-size: 14px !important; }
+    .vip-grid p { font-size: 11px !important; line-height: 1.5 !important; }
+    
+    /* === 13. BUNDLE 하단 자동화 박스 === */
+    .auto-process-grid { grid-template-columns: 1fr 1fr 1fr !important; gap: 8px !important; }
+    .auto-process-grid > div { padding: 14px 8px !important; }
+    .auto-process-grid > div > div:nth-child(1) { font-size: 24px !important; }
+    .auto-process-grid > div > div:nth-child(2) { font-size: 11px !important; }
+    .auto-process-grid > div > div:nth-child(3) { font-size: 12px !important; }
+    .auto-features-grid { grid-template-columns: 1fr 1fr !important; gap: 8px !important; }
+    .auto-features-grid > div { padding: 10px 12px !important; }
+    .auto-features-grid > div span:last-child { font-size: 12px !important; }
+    
+    /* === 14. FAQ === */
+    .faq-question { padding: 22px 0; font-size: 15px; }
+    .faq-toggle { font-size: 22px; }
+    .faq-answer-inner { font-size: 14px; line-height: 1.7; padding-bottom: 22px; }
+    
+    /* === 15. FINAL CTA === */
+    .final-summary { padding: 28px 22px; margin-bottom: 36px; }
+    .final-summary-title { font-size: 18px; margin-bottom: 16px; }
+    .final-summary li { font-size: 14px; padding: 8px 0; }
+    .final-price-current { font-size: 56px; }
+    .final-price-current .won { font-size: 28px; }
+    .final-price-original { font-size: 18px; }
+    .btn-kakao { padding: 18px 32px; font-size: 15px; }
+    
+    /* === 16. FOOTER === */
+    footer { padding: 40px 20px; }
+  }
+  
+  /* 더 작은 화면 (480px 이하) === */
+  @media (max-width: 480px) {
+    .hero-title { font-size: 36px !important; }
+    .solution-title, .features-title, .cases-title, .pricing-title, .bundle-title, .faq-title, .final-title {
+      font-size: 28px !important;
+    }
+    .eb-price-current { font-size: 48px; }
+    .eb-price-current .won { font-size: 26px; }
+    .pain-text { font-size: 11px; }
+    .case-quote { font-size: 11px; }
+    .metric-value { font-size: 16px; }
   }
 </style>
 </head>
