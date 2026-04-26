@@ -1006,17 +1006,79 @@
         <div class="bundle-number">02</div>
         <h3 class="bundle-name">3D 픽사 영상 툴</h3>
         <p class="bundle-desc-small">픽사 스타일의 3D 애니메이션 영상을 쉽게 제작</p>
+        
+        <!-- 일본 진출 셀링 포인트 -->
+        <div style="margin: 14px 0; padding: 16px 18px; background: linear-gradient(135deg, rgba(249,115,22,0.1), rgba(249,115,22,0.03)); border: 1px dashed var(--orange); border-radius: 12px;">
+          <div style="font-size: 11px; font-weight: 700; color: var(--orange); letter-spacing: 0.08em; margin-bottom: 10px;">🌏 한국 + 일본 동시 공략</div>
+          <div style="font-size: 13px; color: var(--grey-700); line-height: 1.7; font-weight: 500;">
+            ✓ <strong>한국어 + 일본어</strong> 두 가지 언어 지원<br>
+            ✓ <strong>일본 쇼츠/틱톡 진출</strong> — 클릭 한 번으로<br>
+            ✓ 같은 콘텐츠로 <strong>2배의 조회수</strong> 노리기
+          </div>
+          <div style="margin-top: 10px; padding-top: 10px; border-top: 1px dashed rgba(249,115,22,0.3); font-size: 11px; color: var(--grey-500); line-height: 1.5;">
+            💡 일본은 한국보다 쇼츠 경쟁이 덜해 <strong>알고리즘 노출이 훨씬 유리</strong>합니다
+          </div>
+        </div>
+        
         <div style="display:inline-flex; align-items:center; gap:6px; padding:6px 12px; background:rgba(249,115,22,0.1); border-radius:100px; font-size:11px; font-weight:700; color:var(--orange); margin-bottom:14px; letter-spacing:0.05em;">⚡ 거의 자동화 수준</div>
-        <div style="aspect-ratio: 9/16; border-radius: 16px; overflow: hidden; background: var(--black);">
+        
+        <!-- 언어 탭 -->
+        <div class="lang-tabs" data-card="pixar" style="display: flex; gap: 8px; margin-bottom: 12px;">
+          <button class="lang-tab active" data-lang="jp" style="flex: 1; padding: 10px 14px; background: var(--black); color: var(--white); border: none; border-radius: 10px; font-size: 13px; font-weight: 600; cursor: pointer; font-family: inherit; transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 6px;">
+            🇯🇵 일본어
+          </button>
+          <button class="lang-tab" data-lang="kr" style="flex: 1; padding: 10px 14px; background: var(--cream); color: var(--grey-700); border: 1px solid rgba(0,0,0,0.08); border-radius: 10px; font-size: 13px; font-weight: 600; cursor: pointer; font-family: inherit; transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 6px;">
+            🇰🇷 한국어
+          </button>
+        </div>
+        
+        <!-- 일본어 영상 -->
+        <div class="lang-video active video-clickable" data-lang="jp" data-video-src="videos/pixar-demo-jp-full.mp4" data-video-label="🇯🇵 일본어 버전" style="aspect-ratio: 9/16; border-radius: 16px; overflow: hidden; background: var(--black); position: relative; cursor: pointer;">
           <video
             autoplay
             loop
             muted
             playsinline
             preload="metadata"
-            style="width: 100%; height: 100%; object-fit: cover; display: block;">
-            <source src="videos/pixar-demo.mp4" type="video/mp4">
+            style="width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none;">
+            <source src="videos/pixar-demo-jp.mp4" type="video/mp4">
           </video>
+          <!-- 재생 오버레이 -->
+          <div class="play-overlay" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.4) 100%); transition: background 0.3s; pointer-events: none;">
+            <div style="width: 64px; height: 64px; background: rgba(255,255,255,0.95); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(0,0,0,0.4); transition: transform 0.3s;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 5V19L19 12L8 5Z" fill="#0A0A0A"/>
+              </svg>
+            </div>
+          </div>
+          <!-- 소리 안내 라벨 -->
+          <div style="position: absolute; bottom: 10px; right: 10px; padding: 5px 10px; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); color: var(--white); border-radius: 100px; font-size: 11px; font-weight: 600; display: flex; align-items: center; gap: 5px; pointer-events: none;">
+            🔊 클릭해서 듣기
+          </div>
+        </div>
+        
+        <!-- 한국어 영상 -->
+        <div class="lang-video video-clickable" data-lang="kr" data-video-src="videos/pixar-demo-kr-full.mp4" data-video-label="🇰🇷 한국어 버전" style="display: none; aspect-ratio: 9/16; border-radius: 16px; overflow: hidden; background: var(--black); position: relative; cursor: pointer;">
+          <video
+            loop
+            muted
+            playsinline
+            preload="metadata"
+            style="width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none;">
+            <source src="videos/pixar-demo-kr.mp4" type="video/mp4">
+          </video>
+          <!-- 재생 오버레이 -->
+          <div class="play-overlay" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.4) 100%); transition: background 0.3s; pointer-events: none;">
+            <div style="width: 64px; height: 64px; background: rgba(255,255,255,0.95); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(0,0,0,0.4); transition: transform 0.3s;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 5V19L19 12L8 5Z" fill="#0A0A0A"/>
+              </svg>
+            </div>
+          </div>
+          <!-- 소리 안내 라벨 -->
+          <div style="position: absolute; bottom: 10px; right: 10px; padding: 5px 10px; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); color: var(--white); border-radius: 100px; font-size: 11px; font-weight: 600; display: flex; align-items: center; gap: 5px; pointer-events: none;">
+            🔊 클릭해서 듣기
+          </div>
         </div>
       </div>
       
@@ -1220,6 +1282,29 @@
 </section>
 
 <!-- FOOTER -->
+<!-- VIDEO MODAL (라이트박스) -->
+<div id="videoModal" style="display: none; position: fixed; inset: 0; z-index: 9999; background: rgba(0,0,0,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); align-items: center; justify-content: center; padding: 20px; animation: modalFadeIn 0.3s ease;">
+  <button id="modalClose" aria-label="닫기" style="position: absolute; top: 24px; right: 24px; width: 48px; height: 48px; border-radius: 50%; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: var(--white); font-size: 24px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; backdrop-filter: blur(10px); z-index: 10001;">
+    ✕
+  </button>
+  
+  <div id="modalLabel" style="position: absolute; top: 24px; left: 24px; padding: 8px 16px; background: rgba(0,0,0,0.5); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); color: var(--white); border-radius: 100px; font-size: 13px; font-weight: 600; z-index: 10001;"></div>
+  
+  <div style="position: relative; max-width: 420px; width: 100%; aspect-ratio: 9/16; max-height: 90vh;">
+    <video id="modalVideo" controls playsinline preload="auto" style="width: 100%; height: 100%; object-fit: contain; border-radius: 16px; background: var(--black);">
+    </video>
+  </div>
+</div>
+
+<style>
+  @keyframes modalFadeIn { from { opacity: 0; } to { opacity: 1; } }
+  #modalClose:hover { background: rgba(255,255,255,0.2); transform: rotate(90deg); }
+  .video-clickable { transition: transform 0.3s; }
+  .video-clickable:hover { transform: scale(1.02); }
+  .video-clickable:hover .play-overlay { background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 100%) !important; }
+  .video-clickable:hover .play-overlay > div { transform: scale(1.1); }
+</style>
+
 <footer>
   <div class="logo">
     <span class="logo-dot"></span>
@@ -1234,6 +1319,93 @@
 </footer>
 
 <script>
+  // 언어 탭 전환 (3D 픽사 영상 툴)
+  document.querySelectorAll('.lang-tabs').forEach(tabContainer => {
+    const card = tabContainer.parentElement;
+    const tabs = tabContainer.querySelectorAll('.lang-tab');
+    const videos = card.querySelectorAll('.lang-video');
+    
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const targetLang = tab.dataset.lang;
+        
+        // 탭 스타일 변경
+        tabs.forEach(t => {
+          if (t.dataset.lang === targetLang) {
+            t.classList.add('active');
+            t.style.background = 'var(--black)';
+            t.style.color = 'var(--white)';
+            t.style.border = 'none';
+          } else {
+            t.classList.remove('active');
+            t.style.background = 'var(--cream)';
+            t.style.color = 'var(--grey-700)';
+            t.style.border = '1px solid rgba(0,0,0,0.08)';
+          }
+        });
+        
+        // 영상 전환
+        videos.forEach(v => {
+          if (v.dataset.lang === targetLang) {
+            v.classList.add('active');
+            v.style.display = v.querySelector('video') ? 'block' : 'flex';
+            const video = v.querySelector('video');
+            if (video) {
+              video.currentTime = 0;
+              video.play().catch(() => {});
+            }
+          } else {
+            v.classList.remove('active');
+            v.style.display = 'none';
+            const video = v.querySelector('video');
+            if (video) video.pause();
+          }
+        });
+      });
+    });
+  });
+  
+  // 비디오 모달 (라이트박스) - 클릭하면 소리 나오는 큰 영상 재생
+  const videoModal = document.getElementById('videoModal');
+  const modalVideo = document.getElementById('modalVideo');
+  const modalLabel = document.getElementById('modalLabel');
+  const modalClose = document.getElementById('modalClose');
+  
+  function openVideoModal(src, label) {
+    modalVideo.src = src;
+    modalLabel.textContent = label || '';
+    videoModal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    modalVideo.currentTime = 0;
+    modalVideo.muted = false;
+    modalVideo.play().catch(() => {});
+  }
+  
+  function closeVideoModal() {
+    modalVideo.pause();
+    modalVideo.src = '';
+    videoModal.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+  
+  // 클릭 가능한 영상에 클릭 핸들러 부착
+  document.querySelectorAll('.video-clickable').forEach(el => {
+    el.addEventListener('click', () => {
+      const src = el.dataset.videoSrc;
+      const label = el.dataset.videoLabel;
+      if (src) openVideoModal(src, label);
+    });
+  });
+  
+  // 모달 닫기 (X 버튼, 배경 클릭, ESC)
+  modalClose.addEventListener('click', closeVideoModal);
+  videoModal.addEventListener('click', (e) => {
+    if (e.target === videoModal) closeVideoModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && videoModal.style.display === 'flex') closeVideoModal();
+  });
+  
   // FAQ 토글
   document.querySelectorAll('.faq-question').forEach(btn => {
     btn.addEventListener('click', () => {
