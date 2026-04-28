@@ -589,6 +589,10 @@
       margin-bottom: 12px !important;
       line-height: 1.4 !important;
     }
+    
+    /* BONUS VALUE 설명 텍스트 모바일 컴팩트 */
+    .bonus-value-desc { font-size: 13px !important; line-height: 1.6 !important; }
+    .bonus-value-desc span { font-size: 12px !important; }
     .breakeven-msg-box .value-savings-grid { 
       gap: 6px !important; 
       margin-top: 16px !important;
@@ -629,37 +633,59 @@
     .vip-grid p { font-size: 11px !important; line-height: 1.5 !important; }
     
     /* === 13. BUNDLE 하단 자동화 박스 === */
+    .auto-container-box { padding: 28px 20px !important; border-radius: 20px !important; margin-top: 32px !important; }
     .auto-process-grid { grid-template-columns: 1fr 1fr 1fr !important; gap: 8px !important; }
     .auto-process-grid > div { padding: 14px 8px !important; }
     .auto-process-grid > div > div:nth-child(1) { font-size: 24px !important; }
     .auto-process-grid > div > div:nth-child(2) { font-size: 11px !important; }
     .auto-process-grid > div > div:nth-child(3) { font-size: 12px !important; }
-    .auto-features-grid { grid-template-columns: 1fr 1fr !important; gap: 8px !important; }
-    .auto-features-grid > div { padding: 10px 12px !important; flex-wrap: nowrap !important; }
-    .auto-features-grid > div span:nth-child(2) { font-size: 12px !important; }
+    
+    /* 4개 특징 모두 1열 풀폭 */
+    .auto-features-grid { grid-template-columns: 1fr !important; gap: 6px !important; }
+    .auto-features-grid > div { 
+      padding: 10px 14px !important; 
+      flex-wrap: nowrap !important;
+      align-items: center !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .auto-features-grid > div > span:nth-child(2) { 
+      font-size: 12px !important;
+      flex: 1 !important;
+      white-space: nowrap !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+    }
     
     /* 픽사 카드 3개 탭 모바일 */
     .lang-tabs { gap: 4px !important; }
     .lang-tab { padding: 8px 4px !important; font-size: 10px !important; gap: 2px !important; }
-    /* 단톡방 가이드 항목: 풀폭 + 가로 배지 정렬 + 중앙 정렬 + 줄바꿈 방지 */
+    
+    /* 마지막 단톡방 항목: 체크 + 텍스트 + 배지 한 줄 가로 배치 */
     .auto-features-grid > div:last-child { 
-      grid-column: 1 / -1 !important;
       flex-direction: row !important;
       align-items: center !important;
-      flex-wrap: nowrap !important;
-      justify-content: center !important;
+      flex-wrap: wrap !important;
+      gap: 8px !important;
+      padding: 10px 14px !important;
+    }
+    .auto-features-grid > div:last-child > span:nth-child(1) {
+      flex-shrink: 0;
     }
     .auto-features-grid > div:last-child > span:nth-child(2) {
       font-size: 11px !important;
+      flex: 1 1 auto !important;
+      min-width: 0 !important;
       white-space: nowrap !important;
-      flex: none !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
     }
     .auto-features-grid > div:last-child > span:last-child {
-      margin-left: 8px !important;
-      flex-shrink: 0;
+      margin-left: auto !important;
+      flex-shrink: 0 !important;
       font-size: 9px !important;
       padding: 3px 7px !important;
-      white-space: nowrap;
+      white-space: nowrap !important;
     }
     
     /* === 14. FAQ === */
@@ -1271,7 +1297,29 @@
       </div>
     </div>
     
-    <div style="max-width: 900px; margin: 64px auto 0; padding: 40px 48px; background: linear-gradient(135deg, #0A0A0A 0%, #1F1F1F 100%); border-radius: 28px; color: var(--white); position: relative; overflow: hidden;">
+    <!-- 평생 혜택 안내 박스 (AI 영화 카드 다음, 자동화 박스 직전) -->
+    <div style="max-width: 900px; margin: 80px auto 0; padding: 36px 32px 32px; background: var(--white); border: 2px dashed var(--orange); border-radius: 24px; position: relative;">
+      <div style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 16px; background: var(--orange); color: var(--white); border-radius: 100px; font-size: 11px; font-weight: 800; letter-spacing: 0.12em; margin-bottom: 20px; white-space: nowrap;">🎁 평생 혜택 안내</div>
+      
+      <h3 style="font-family: var(--font-display); font-size: clamp(22px, 4vw, 32px); font-weight: 600; color: var(--black); line-height: 1.35; margin: 0 0 24px; letter-spacing: -0.02em;">
+        받은 툴은 그대로,<br>
+        <span style="font-family: var(--font-serif-italic); font-style: italic; color: var(--orange);">새 툴은 계속 추가됩니다.</span>
+      </h3>
+      
+      <div style="font-size: 14px; line-height: 1.8; color: var(--grey-700); padding: 22px 24px; background: linear-gradient(135deg, #FFF8F0, #FEF3E7); border-radius: 16px;">
+        얼리버드 보너스 툴은 시기에 따라 제공 구성이 달라질 수 있습니다.<br>
+        새로운 툴이 추가되면 <strong style="color: var(--orange);">얼리버드 가입자에게 자동으로 제공</strong>됩니다.
+        <br><br>
+        이미 제공받은 툴은 사라지지 않고 계속 유지되며,<br>
+        <strong style="color: var(--orange);">이후 새롭게 제공되는 툴도 함께 받을 수 있습니다.</strong>
+        <br><br>
+        <span style="font-size: 12.5px; color: var(--grey-500); display: block; padding-top: 14px; border-top: 1px dashed rgba(249,115,22,0.3); line-height: 1.65;">
+          ※ 다만 이후 가입자의 경우, 이전에 제공되었던 일부 툴은 제공 대상에서 제외될 수 있습니다.
+        </span>
+      </div>
+    </div>
+    
+    <div class="auto-container-box" style="max-width: 900px; margin: 64px auto 0; padding: 40px 48px; background: linear-gradient(135deg, #0A0A0A 0%, #1F1F1F 100%); border-radius: 28px; color: var(--white); position: relative; overflow: hidden;">
       <div style="position:absolute; top:-50px; right:-50px; width:200px; height:200px; background:radial-gradient(circle, rgba(249,115,22,0.3), transparent); border-radius:50%; filter:blur(40px);"></div>
       
       <div style="position:relative; z-index:2;">
@@ -1474,8 +1522,9 @@
           제공되는 툴만 합산해도<br>
           <em style="font-family: var(--font-serif-italic); font-style: italic; color: var(--orange);">110만원 이상의 가치</em>
         </h3>
-        <p style="color: var(--grey-700); font-size: 16px; line-height: 1.6;">
-          쇼츠 리믹서 하나만이 아닙니다. <strong>평생 사용권 + 4가지 보너스 툴 + 얼리버드 단톡방</strong>까지.<br>
+        <p class="bonus-value-desc" style="color: var(--grey-700); font-size: 16px; line-height: 1.6;">
+          쇼츠 리믹서 하나만이 아닙니다.<br>
+          <strong>평생 사용권 + 4가지 보너스 툴 + 얼리버드 단톡방</strong>까지.<br>
           <span style="font-size: 14px; color: var(--grey-500);">그 중 <strong style="color: var(--orange);">썰 이미지&대본 생성기</strong>는 얼리버드만 사용 가능합니다.</span>
         </p>
       </div>
@@ -1768,6 +1817,42 @@
         모든 문의는 <strong>카카오톡 오픈채팅</strong>으로 받고 있습니다.<br>
         페이지 하단 또는 상단의 <strong>"카톡 문의"</strong> 버튼을 눌러 주세요.<br>
         빠르게 응답해드립니다.
+      </div></div>
+    </div>
+    
+    <!-- 얼리버드 평생 혜택 관련 -->
+    <div class="faq-item">
+      <button class="faq-question"><span>이미 받은 툴은 계속 사용할 수 있나요?</span><span class="faq-toggle">+</span></button>
+      <div class="faq-answer"><div class="faq-answer-inner">
+        네. 얼리버드 가입 후 제공받은 툴은 <strong>계속 유지</strong>됩니다.
+      </div></div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question"><span>이후 새롭게 추가되는 툴도 받을 수 있나요?</span><span class="faq-toggle">+</span></button>
+      <div class="faq-answer"><div class="faq-answer-inner">
+        네. 얼리버드 가입자는 이후 새롭게 제공되는 툴도 <strong>자동으로</strong> 받을 수 있습니다.
+      </div></div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question"><span>보너스 툴 구성은 계속 동일한가요?</span><span class="faq-toggle">+</span></button>
+      <div class="faq-answer"><div class="faq-answer-inner">
+        아닙니다. 보너스 툴 구성은 <strong>시기에 따라 달라질 수 있습니다.</strong>
+      </div></div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question"><span>나중에 가입하면 이전에 제공된 툴도 받을 수 있나요?</span><span class="faq-toggle">+</span></button>
+      <div class="faq-answer"><div class="faq-answer-inner">
+        가입 시점에 따라 일부 이전 툴은 <strong>제공 대상에서 제외</strong>될 수 있습니다.
+      </div></div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question"><span>추가 비용이 있나요?</span><span class="faq-toggle">+</span></button>
+      <div class="faq-answer"><div class="faq-answer-inner">
+        얼리버드 혜택에 포함된 보너스 툴은 <strong>별도 추가 비용 없이</strong> 제공됩니다.
       </div></div>
     </div>
   </div>
